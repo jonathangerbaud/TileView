@@ -944,14 +944,14 @@ public class TileView extends ZoomPanLayout {
 		}
 		@Override
 		public void onDrag( Point point ) {
-			suppressRender();
+			renderOnMovement();
 			for ( TileViewEventListener listener : tileViewEventListeners ) {
 				listener.onDrag( point.x, point.y );
 			}
 		}
 		@Override
 		public void onFingerDown( Point point ) {
-			suppressRender();
+			renderOnMovement();
 			for ( TileViewEventListener listener : tileViewEventListeners ) {
 				listener.onFingerDown( point.x, point.y );
 			}
@@ -967,7 +967,7 @@ public class TileView extends ZoomPanLayout {
 		}
 		@Override
 		public void onFling( Point startPoint, Point finalPoint ) {
-			suppressRender();
+			renderOnMovement();
 			for ( TileViewEventListener listener : tileViewEventListeners ) {
 				listener.onFling( startPoint.x, startPoint.y, finalPoint.x, finalPoint.y );
 			}
@@ -981,7 +981,7 @@ public class TileView extends ZoomPanLayout {
 		}
 		@Override
 		public void onPinch( Point point ) {
-			suppressRender();
+			renderOnMovement();
 			for ( TileViewEventListener listener : tileViewEventListeners ) {
 				listener.onPinch( point.x, point.y );
 			}
@@ -995,7 +995,7 @@ public class TileView extends ZoomPanLayout {
 		}
 		@Override
 		public void onPinchStart( Point point ) {
-			suppressRender();
+			renderOnMovement();
 			for ( TileViewEventListener listener : tileViewEventListeners ) {
 				listener.onPinchStart( point.x, point.y );
 			}
