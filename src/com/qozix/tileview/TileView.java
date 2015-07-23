@@ -81,7 +81,7 @@ public class TileView extends ZoomPanLayout {
 	private PathManager pathManager;
 	private MarkerManager markerManager;
 	private CalloutManager calloutManager;
-
+	private boolean shouldSuppressRenderOnMovement;
 
 	/**
 	 * Constructor to use when creating a TileView from code.  Inflating from XML is not currently supported.
@@ -152,6 +152,10 @@ public class TileView extends ZoomPanLayout {
 	//------------------------------------------------------------------------------------
 	// Rendering API
 	//------------------------------------------------------------------------------------
+
+	public void setSuppressRenderOnMovement ( boolean shouldSuppress ) {
+		shouldSuppressRenderOnMovement = shouldSuppress;
+	}
 
 	/**
 	 * Request that the current tile set is re-examined and re-drawn.
@@ -864,6 +868,14 @@ public class TileView extends ZoomPanLayout {
 	// Private Listeners
 	//------------------------------------------------------------------------------------
 
+	private void renderOnMovement() {
+		if (shouldSuppressRenderOnMovement) {
+			suppressRender();
+		} else {
+			requestRender();
+		}
+	}
+
 	private ZoomPanListener zoomPanListener = new ZoomPanListener() {
 		@Override
 		public void onZoomPanEvent(){
@@ -1277,6 +1289,10 @@ public class TileView extends ZoomPanLayout {
 
 	public PathManager getPathManager() {
 		return pathManager;
+	}
+
+	public TileManager getTileManager() {
+		return tileManager;
 	}
 
 }
