@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.view.ViewGroup;
 import android.view.ViewParent;
-import android.view.animation.AlphaAnimation;
 import android.widget.ImageView;
 
 import com.qozix.tileview.graphics.BitmapDecoder;

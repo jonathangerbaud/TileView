@@ -3,7 +3,6 @@ package com.qozix.tileview.detail;
 import java.util.LinkedList;
 
 import android.graphics.Rect;
-import android.util.Log;
 
 import com.qozix.tileview.tiles.Tile;
 

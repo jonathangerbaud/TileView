@@ -2,9 +2,6 @@ package com.qozix.animation;
 
 import java.util.ArrayList;
 
-import android.os.Handler;
-import android.os.Message;
-
 import com.qozix.animation.easing.EasingEquation;
 import com.qozix.animation.easing.Linear;
 

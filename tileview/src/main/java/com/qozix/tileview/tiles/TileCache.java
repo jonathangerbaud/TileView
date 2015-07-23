@@ -59,7 +59,7 @@ public class TileCache {
 		new Thread(new Runnable(){
 			@Override
 			public void run(){
-				File cacheDirectory = new File( context.getCacheDir().getPath() + File.separator + "com/qozix/mapview" );
+				File cacheDirectory = new File( context.getCacheDir().getPath() + File.separator + "tileview/src/main/java/qozix/mapview");
 				try {
 					diskCache = DiskLruCache.open( cacheDirectory, 1, 1, DISK_CACHE_CAPACITY );
 				} catch ( IOException e ) {
